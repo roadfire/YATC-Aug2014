@@ -131,7 +131,8 @@
 
 - (NSString *)usernameForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.tweets[indexPath.row] valueForKeyPath:@"user.screen_name"];
+    NSString *username = [self.tweets[indexPath.row] valueForKeyPath:@"user.screen_name"];
+    return [NSString stringWithFormat:@"@%@", username];
 }
 
 - (NSString *)tweetForRowAtIndexPath:(NSIndexPath *)indexPath

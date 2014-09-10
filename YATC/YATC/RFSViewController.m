@@ -67,6 +67,7 @@
 {
     cell.textLabel.text = [self.viewModel usernameForRowAtIndexPath:indexPath];
     cell.detailTextLabel.text = [self.viewModel tweetForRowAtIndexPath:indexPath];
+    [cell.detailTextLabel sizeToFit];
 }
 
 @end
