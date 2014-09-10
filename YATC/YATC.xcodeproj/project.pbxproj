@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0344EEF019BA012400926EFE /* RFSTwitterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344EEEF19BA012400926EFE /* RFSTwitterViewModel.m */; };
 		035BD73219AE7059000BBB93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BD73119AE7059000BBB93 /* Foundation.framework */; };
 		035BD73419AE7059000BBB93 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BD73319AE7059000BBB93 /* CoreGraphics.framework */; };
 		035BD73619AE7059000BBB93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BD73519AE7059000BBB93 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0344EEEE19BA012400926EFE /* RFSTwitterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFSTwitterViewModel.h; sourceTree = "<group>"; };
+		0344EEEF19BA012400926EFE /* RFSTwitterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSTwitterViewModel.m; sourceTree = "<group>"; };
 		035BD72E19AE7059000BBB93 /* YATC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		035BD73119AE7059000BBB93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		035BD73319AE7059000BBB93 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 				035BD74319AE7059000BBB93 /* Main.storyboard */,
 				035BD74619AE7059000BBB93 /* RFSViewController.h */,
 				035BD74719AE7059000BBB93 /* RFSViewController.m */,
+				0344EEEE19BA012400926EFE /* RFSTwitterViewModel.h */,
+				0344EEEF19BA012400926EFE /* RFSTwitterViewModel.m */,
 				035BD74919AE7059000BBB93 /* Images.xcassets */,
 				035BD73819AE7059000BBB93 /* Supporting Files */,
 			);
@@ -252,6 +257,7 @@
 			files = (
 				035BD74219AE7059000BBB93 /* RFSAppDelegate.m in Sources */,
 				035BD73E19AE7059000BBB93 /* main.m in Sources */,
+				0344EEF019BA012400926EFE /* RFSTwitterViewModel.m in Sources */,
 				035BD74819AE7059000BBB93 /* RFSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +463,7 @@
 				035BD76219AE7059000BBB93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		035BD76319AE7059000BBB93 /* Build configuration list for PBXNativeTarget "YATCTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				035BD76519AE7059000BBB93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
