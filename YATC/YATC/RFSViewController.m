@@ -68,6 +68,19 @@
     cell.textLabel.text = [self.viewModel usernameForRowAtIndexPath:indexPath];
     cell.detailTextLabel.text = [self.viewModel tweetForRowAtIndexPath:indexPath];
     [cell.detailTextLabel sizeToFit];
+    
+    [self.viewModel fetchImageForIndexPath:indexPath success:^(UIImage *image){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UITableViewCell *updateCell = [self.tableView cellForRowAtIndexPath:indexPath];
+            if (updateCell)
+            {
+                updateCell.imageView.image = image;
+            }
+        });
+    }];
+    
+    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 @end

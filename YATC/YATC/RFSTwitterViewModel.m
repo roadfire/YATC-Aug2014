@@ -119,6 +119,23 @@
     }];
 }
 
+- (void)fetchImageForIndexPath:(NSIndexPath *)indexPath success:(void (^)(UIImage *))success
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *urlString = [self urlStringForImageAtIndexPath:indexPath];
+        NSURL *imageURL = [NSURL URLWithString:urlString];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        if (imageData)
+        {
+            UIImage *image = [UIImage imageWithData:imageData];
+            if (image)
+            {
+                success(image);
+            }
+        }
+    });
+}
+
 - (NSInteger)numberOfSections
 {
     return 1;
@@ -138,6 +155,13 @@
 - (NSString *)tweetForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [self.tweets[indexPath.row] valueForKeyPath:@"text"];
+}
+
+- (NSString *)urlStringForImageAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *tweet = self.tweets[indexPath.row];
+    NSString *urlString = [tweet valueForKeyPath:@"user.profile_image_url"];
+    return [urlString stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
 }
 
 @end

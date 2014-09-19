@@ -16,5 +16,6 @@
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (NSString *)usernameForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)tweetForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)fetchImageForIndexPath:(NSIndexPath *)indexPath success:(void (^)(UIImage *image))success;
 
 @end
