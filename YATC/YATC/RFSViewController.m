@@ -30,12 +30,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self refresh];
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)refresh
+{
     [self.viewModel
      fetchTweetsWithSuccess:^
      {
          dispatch_async(dispatch_get_main_queue(), ^{
              [self.tableView reloadData];
+             [self.refreshControl endRefreshing];
          });
      }
      failure:^
