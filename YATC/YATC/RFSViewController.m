@@ -9,6 +9,8 @@
 #import "RFSViewController.h"
 #import "RFSTwitterViewModel.h"
 
+@import Social;
+
 @interface RFSViewController ()
 
 @property RFSTwitterViewModel *viewModel;
@@ -89,6 +91,15 @@
     
     cell.imageView.image = [UIImage imageNamed:@"placeholder"];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+}
+
+- (IBAction)composeTweet:(id)sender
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 @end
